@@ -1,0 +1,106 @@
+@import "./function.scss";
+
+@mixin b($block) {
+	$B: $namespace + "-" + $block !global;
+
+	.#{$B} {
+		@content;
+	}
+}
+
+@mixin e($element) {
+	$E: $element !global;
+	$selector: &;
+	$currentSelector: "";
+	@each $unit in $element {
+		$currentSelector: #{$currentSelector +
+			"." +
+			$B +
+			$element-separator +
+			$unit +
+			","};
+	}
+
+	@if hitAllSpecialNestRule($selector) {
+		@at-root {
+			#{$selector} {
+				#{$currentSelector} {
+					@content;
+				}
+			}
+		}
+	} @else {
+		@at-root {
+			#{$currentSelector} {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin m($modifier) {
+	$selector: &;
+	$currentSelector: "";
+	@each $unit in $modifier {
+		$currentSelector: #{$currentSelector +
+			& +
+			$modifier-separator +
+			$unit +
+			","};
+	}
+
+	@at-root {
+		#{$currentSelector} {
+			@content;
+		}
+	}
+}
+
+@mixin when($state) {
+	@at-root {
+		&.#{$state-prefix + $state} {
+			@content;
+		}
+	}
+}
+
+@mixin selfAdaptionMedia($key, $map: $--default-screen) {
+	@if map-has-key($map, $key) {
+		@media only screen and #{inspect(map-get($map, $key))} {
+			@content;
+		}
+	}
+}
+
+@mixin pseudo($pseudo) {
+	@at-root #{&}#{":#{$pseudo}"} {
+		@content;
+	}
+}
+
+@mixin scroll-bar {
+	$--scrollbar-thumb-background: #b4bccc;
+	$--scrollbar-tranck-background: #fff;
+	&::-webkit-scrollbar {
+		z-index: 11;
+		width: 6px;
+		&:horizontal {
+			height: 6px;
+		}
+		&-thumb {
+			border-radius: 5px;
+			width: 6px;
+			background: $--scrollbar-thumb-background;
+		}
+		&-cnrner {
+			background: $--scrollbar-tranck-background;
+		}
+		&-track {
+			background: $--scrollbar-tranck-background;
+			&-piece {
+				background: $--scrollbar-tranck-background;
+				width: 6px;
+			}
+		}
+	}
+}
