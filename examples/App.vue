@@ -1,28 +1,25 @@
 <template>
 	<div id="app">
-		<div style="width: 600px;">
+		<div style="width: 900px;">
 			<p>
 				GRID组件，支持自定义label的宽度，字体颜色、位置、背景色，以及内容的字体颜色、位置、背景色，如果都不设置，则为默认样式，同时还支持header/footer两个slot，具体看实例
 			</p>
 			<si-grid :tempData="tempData">
-				<template slot="header">
-					<si-grid-item prop="id" label="用户编号"></si-grid-item>
-					<si-grid-item prop="date" label="生日"></si-grid-item>
-				</template>
-				<si-sub-grid>
-					<si-grid-item prop="id" label="用户编号"></si-grid-item>
-					<si-grid-item prop="date" label="生日"></si-grid-item>
-					<si-grid-item prop="name" label="姓名"></si-grid-item>
-				</si-sub-grid>
-				<si-sub-grid>
-					<si-grid-item prop="old" label="年龄"></si-grid-item>
-					<si-grid-item prop="phone" label="电话"></si-grid-item>
-					<si-grid-item prop="email" label="邮箱"></si-grid-item>
-				</si-sub-grid>
-				<template slot="footer">
-					<si-grid-item prop="address" label="地址"></si-grid-item>
-					<si-grid-item prop="address" label="地址"></si-grid-item>
-				</template>
+				<si-grid-row>
+					<si-grid-col prop="id" label="账号"></si-grid-col>
+					<si-grid-col prop="name" label="姓名"></si-grid-col>
+				</si-grid-row>
+				<si-grid-row>
+					<si-grid-col prop="date" label="生日"></si-grid-col>
+					<si-grid-col prop="old" label="年龄"></si-grid-col>
+				</si-grid-row>
+				<si-grid-row>
+					<si-grid-col prop="address" label="地址"></si-grid-col>
+				</si-grid-row>
+				<si-grid-row>
+					<si-grid-col prop="email" label="邮箱"></si-grid-col>
+					<si-grid-col prop="id" label="账号"></si-grid-col>
+				</si-grid-row>
 			</si-grid>
 		</div>
 	</div>
@@ -40,7 +37,7 @@ export default {
 				address: "上海市普陀区金沙江路 100 弄",
 				old: "26",
 				phone: "111111111222",
-				email: "789546463@qq.com"
+				email: "78954232342343@qq.com"
 			}
 		};
 	}

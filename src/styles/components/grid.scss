@@ -1,50 +1,50 @@
-@include b(grid) {
-	width: 100%;
-	line-height: 1;
-	@include e(header) {
-		width: 100%;
-		> .si-grid-item {
-			border-bottom: 0;
-		}
-	}
-	@include e(footer) {
-		width: 100%;
-		> .si-grid-item:not(:first-child) {
-			border-top: 0;
-		}
-	}
-	@include e(body) {
-		width: 100%;
-		display: flex;
-		flex-flow: row nowrap;
-		@include b(sub-grid) {
-			flex: 1;
-			> .si-grid-item {
-				border-bottom: 0;
-			}
-		}
-	}
-}
+// @include b(grid) {
+// 	width: 100%;
+// 	line-height: 1;
+// 	@include e(header) {
+// 		width: 100%;
+// 		> .si-grid-item {
+// 			border-bottom: 0;
+// 		}
+// 	}
+// 	@include e(footer) {
+// 		width: 100%;
+// 		> .si-grid-item:not(:first-child) {
+// 			border-top: 0;
+// 		}
+// 	}
+// 	@include e(body) {
+// 		width: 100%;
+// 		display: flex;
+// 		flex-flow: row nowrap;
+// 		@include b(sub-grid) {
+// 			flex: 1;
+// 			> .si-grid-item {
+// 				border-bottom: 0;
+// 			}
+// 		}
+// 	}
+// }
 
-@include b(grid-item) {
-	width: 100%;
-	display: inline-block;
-	box-sizing: border-box;
-	border: $border-base;
-	@include e(title) {
-		float: left;
-		border-right: $border-base;
-		box-sizing: border-box;
-		padding: $padding-base;
-	}
-	@include e(text) {
-		box-sizing: border-box;
-		padding: $padding-base;
-		& > span {
-			width: 100%;
-			display: inline-block;
-			position: relative;
-			box-sizing: border-box;
-		}
-	}
-}
+// @include b(grid-item) {
+// 	width: 100%;
+// 	display: inline-block;
+// 	box-sizing: border-box;
+// 	border: $border-base;
+// 	@include e(title) {
+// 		float: left;
+// 		border-right: $border-base;
+// 		box-sizing: border-box;
+// 		padding: $padding-base;
+// 	}
+// 	@include e(text) {
+// 		box-sizing: border-box;
+// 		padding: $padding-base;
+// 		& > span {
+// 			width: 100%;
+// 			display: inline-block;
+// 			position: relative;
+// 			box-sizing: border-box;
+// 		}
+// 	}
+// }

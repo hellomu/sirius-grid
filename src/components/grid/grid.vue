@@ -1,14 +1,6 @@
 <template>
 	<div class="si-grid">
-		<div class="si-grid-header">
-			<slot name="header"></slot>
-		</div>
-		<div class="si-grid-body">
-			<slot></slot>
-		</div>
-		<div class="si-grid-footer">
-			<slot name="footer"></slot>
-		</div>
+		<slot></slot>
 	</div>
 </template>
 
@@ -28,8 +20,7 @@ export default {
 			}
 		},
 		labelWidth: {
-			type: String || Number,
-			default: "auto"
+			type: Number
 		},
 		labelBackground: {
 			type: String,
@@ -76,7 +67,7 @@ export default {
 	},
 	computed: {
 		computedLabelWidth() {
-			return Math.max.apply(null, this.computedLabel);
+			return this.labelWidth?  this.labelWdith : Math.max.apply(null, this.computedLabel);
 		}
 	}
 };
