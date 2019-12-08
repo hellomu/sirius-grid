@@ -3,7 +3,6 @@
 import Vue from "vue";
 import App from "./App";
 import siriusGrid from "../src/index";
-import "../src/styles/index.scss";
 
 Vue.config.productionTip = false;
 Vue.use(siriusGrid);

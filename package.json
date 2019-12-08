@@ -11,7 +11,7 @@
     "dist:style": "gulp --gulpfile build/gulp.style.conf.js",
     "dist:dev": "webpack --config build/webpack.dist.dev.conf.js",
     "dist:prod": "webpack --config build/webpack.dist.prod.conf.js",
-    "dist": "npm run dist:style && npm run dist:dev && npm run dist:prod",
+    "dist": "npm run dist:dev && npm run dist:prod",
     "start": "npm run dev",
     "unit": "jest --config test/unit/jest.conf.js --coverage",
     "e2e": "node test/e2e/runner.js",

@@ -1,10 +1,8 @@
 import Grid from "./components/grid";
-import SubGrid from "./components/sub-grid";
-import GridItem from "./components/grid-item";
 import GridRow from "./components/grid-row";
 import GridCol from "./components/grid-col";
 
-const components = [Grid, SubGrid, GridItem, GridRow, GridCol];
+const components = [Grid, GridRow, GridCol];
 
 const install = function(Vue = {}) {
 	if (install.installed) {
