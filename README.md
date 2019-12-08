@@ -9,18 +9,14 @@
 npm i -S git+ssh://git@github.com:hellomu/sirius-grid.git
 
 # user it
-import SiriusGrid from "@components/sirius-grid"
+import SiriusGrid from "sirius-grid"
 Vue.use(SiriusGrid)
-import "@components/sirius-grid/dist/styles/siriusui.css";
 
 # serve with hot reload at localhost:8080
 npm run dev
 
 # build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+npm run dist
 
 # run unit tests
 npm run unit

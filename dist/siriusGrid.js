@@ -571,11 +571,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	computed: {
 		computedLabelWidth: function computedLabelWidth() {
-			return this.labelWidth ? this.labelWdith : Math.max.apply(null, this.computedLabel);
+			return this.labelWidth ? this.labelWidth : Math.max.apply(null, this.computedLabel);
 		}
 	}
 });
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib?sourceMap!./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-36730e79","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/components/grid/grid.vue
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib?sourceMap!./node_modules/vue-loader/lib/template-compiler?{"id":"data-v-51272de2","hasScoped":false,"buble":{"transforms":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/components/grid/grid.vue
 var render = function render() {
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "si-grid" }, [_vm._t("default")], 2);
 };

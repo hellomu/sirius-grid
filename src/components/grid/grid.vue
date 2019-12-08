@@ -67,7 +67,7 @@ export default {
 	},
 	computed: {
 		computedLabelWidth() {
-			return this.labelWidth?  this.labelWdith : Math.max.apply(null, this.computedLabel);
+			return this.labelWidth?  this.labelWidth : Math.max.apply(null, this.computedLabel);
 		}
 	}
 };

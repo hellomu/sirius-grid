@@ -4,7 +4,7 @@
 			<p>
 				GRID组件，支持自定义label的宽度，字体颜色、位置、背景色，以及内容的字体颜色、位置、背景色，如果都不设置，则为默认样式，同时还支持header/footer两个slot，具体看实例
 			</p>
-			<si-grid :tempData="tempData">
+			<si-grid :tempData="tempData" :labelWidth="100" labelBackground="#ddd" labelPosition="center" labelColor="#fff" contentBackground="#ddd" contentPosition="center" contentColor="#fff">
 				<si-grid-row>
 					<si-grid-col prop="id" label="账号"></si-grid-col>
 					<si-grid-col prop="name" label="姓名"></si-grid-col>
