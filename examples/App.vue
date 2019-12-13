@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<div style="width: 600px;">
-			<p>基础用法(需要保证宽度足够，否则每列不一定对齐)</p>
+			<p>基础用法</p>
 			<si-grid :tempData="tempData">
 				<si-grid-row>
 					<si-grid-col
