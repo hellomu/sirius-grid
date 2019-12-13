@@ -1,18 +1,25 @@
 <template>
-	<label class="si-grid-col">
-		<div class="si-grid-col-title" :style="labelStyle">
-			{{ label }}
-		</div>
-		<div class="si-grid-col-text" :style="textStyle">
+	<div
+		class="si-grid-col"
+		:style="{width: `${colWidth}%`}"
+	>
+		<div
+			class="si-grid-col-title"
+			:style="labelStyle"
+		>{{ label }}</div>
+		<div
+			class="si-grid-col-text"
+			:style="textStyle"
+		>
 			<span>{{ grid.tempData[prop] }}</span>
 		</div>
-	</label>
+	</div>
 </template>
 
 <script>
 export default {
 	name: "SiGridCol",
-	inject: ["grid"],
+	inject: ["grid", "row"],
 	props: {
 		prop: {
 			type: String,
@@ -24,6 +31,11 @@ export default {
 		}
 	},
 	computed: {
+		colWidth() {
+			let count = this.row.colCount;
+			let width = (1 / count) * 100;
+			return width;
+		},
 		labelStyle() {
 			let {
 				labelBackground,
@@ -58,7 +70,7 @@ export default {
 	methods: {
 		getLabelWidth() {
 			let width = window.getComputedStyle(this.$el.firstElementChild)
-                .width;
+				.width;
 			return Math.ceil(parseFloat(width));
 		},
 		updateLabelWidth(action = "update") {
@@ -79,21 +91,25 @@ export default {
 </script>
 <style lang="scss" scoped>
 .si-grid-col {
-    display: inline-block;
-    box-sizing: border-box;
-    border: 1px solid #dcdfe6;
-    .si-grid-col-title {
-        float: left;
-        border-right: 1px solid #dcdfe6;
-        box-sizing: border-box;
-        padding: 5px;
-    }
-    .si-grid-col-text {
-        box-sizing: border-box;
-        padding: 5px;
-    }
-    &+& {
-        margin-left: -1px;
-    }
+	box-sizing: border-box;
+	border: 1px solid #dcdfe6;
+	.si-grid-col-title {
+		float: left;
+		border-right: 1px solid #dcdfe6;
+		box-sizing: border-box;
+		padding: 5px;
+		height: 100%;
+	}
+	.si-grid-col-text {
+		box-sizing: border-box;
+		padding: 5px;
+		height: 100%;
+		word-wrap: break-word;
+		word-break: break-all;
+		overflow: hidden;
+	}
+	& + & {
+		margin-left: -1px;
+	}
 }
 </style>
