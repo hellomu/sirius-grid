@@ -40,7 +40,7 @@
 					></si-grid-col>
 				</si-grid-row>
 			</si-grid>
-			<p>GRID组件，支持自定义label的宽度，字体颜色、位置、背景色，以及内容的字体颜色、位置、背景色，如果都不设置，则为默认样式，同时还支持header/footer两个slot，具体看实例</p>
+			<p>GRID组件，支持自定义label的宽度，字体颜色、位置、背景色，以及内容的字体颜色、位置、背景色，如果都不设置，则为默认样式，具体看实例</p>
 			<si-grid
 				:tempData="tempData"
 				:labelWidth="100"
